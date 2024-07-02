@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "117129263122",
+    "project_id": "ajiri-1f948",
+    "storage_bucket": "ajiri-1f948.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117129263122:android:295657b9310cd37e4880cb",
+        "android_client_info": {
+          "package_name": "com.example.ajiri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeLCHRHsuRNF3qZ_vffOkrQ1kvDGXXqvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
