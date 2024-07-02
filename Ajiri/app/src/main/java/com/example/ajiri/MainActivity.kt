@@ -5,9 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.ajiri.ui.theme.AjiriTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,9 +38,16 @@ class MainActivity : ComponentActivity() {
                             val userId = backStackEntry.arguments?.getString("userId") ?: return@composable
                             UserDashboardScreen(navController, userId)
                         }
-                        composable("appointment/{taskerId}") { backStackEntry ->
+                        composable(
+                            route = "appointment/{taskerId}/{userId}",
+                            arguments = listOf(
+                                navArgument("taskerId") { type = NavType.StringType },
+                                navArgument("userId") { type = NavType.StringType }
+                            )
+                        ) { backStackEntry ->
                             val taskerId = backStackEntry.arguments?.getString("taskerId") ?: ""
-                            AppointmentScreen(navController, taskerId)
+                            val userId = backStackEntry.arguments?.getString("userId") ?: ""
+                            AppointmentScreen(navController, taskerId, userId)
                         }
                     }
                 }
